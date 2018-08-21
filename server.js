@@ -109,9 +109,9 @@ function render (req, res) {
       return handleError(err)
     }
     res.send(html)
-    if (!isProd) {
+    // if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)
-    }
+    // }
   })
 }
 
