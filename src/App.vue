@@ -63,8 +63,6 @@ a
     &.router-link-active
       color #fff
       font-weight 400
-    &:nth-child(6)
-      margin-right 0
   .github
     color #fff
     font-size .9em

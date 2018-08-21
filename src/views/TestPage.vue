@@ -14,9 +14,9 @@ export default {
         showMessage: function (mes) {
             if (mes == null)
                 mes = this.mes
-            alert(mes)
+            console.log(mes)
         }
-    }
+    },
 }
 </script>
 <style lang="less">
