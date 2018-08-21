@@ -8,7 +8,10 @@ const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
 
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
+// todo 用于本地测试
+const isProd = true
+
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
 const serverInfo =
   `express/${require('express/package.json').version} ` +
@@ -112,8 +115,7 @@ function render (req, res) {
   })
 }
 
-// todo 判断是否为生产环境
-app.get('*', true ? render : (req, res) => {
+app.get('*', isProd ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
 
