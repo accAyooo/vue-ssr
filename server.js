@@ -112,7 +112,8 @@ function render (req, res) {
   })
 }
 
-app.get('*', isProd ? render : (req, res) => {
+// todo 判断是否为生产环境
+app.get('*', true ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
 
